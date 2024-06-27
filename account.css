@@ -1,0 +1,20 @@
+body{
+    background-color: #678a87;
+}
+header{
+    background-color: yellowgreen;
+    color: black;
+    padding: 10px 0;
+    text-align: left;
+    justify-content: space-between;
+    align-items: center;
+}
+.gegevens{
+    display: grid;
+    border: 1px solid black;
+    width: 500px;
+    height: 500px;
+}
+h1{
+    text-align: center;
+}
