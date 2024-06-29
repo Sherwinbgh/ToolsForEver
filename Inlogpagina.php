@@ -7,6 +7,10 @@
         header("Location: Inlogpagina.php");
         exit();
     }
+    if (isset($_SESSION["ingelogd"]) && $_SESSION["ingelogd"]) {
+        header("Location: Produchten.php");
+        exit();
+    }
     if (isset($_POST['login-submit'])){
         $email      = $_POST['email'];
         $password   = $_POST['password'];
