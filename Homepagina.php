@@ -1,4 +1,5 @@
 <?php
+session_start();
     if (isset($_SESSION["ingelogd"])){
         if ($_SESSION["ingelogd"] == true){
             
@@ -16,20 +17,20 @@
     <title>Home</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-            <h1>您好，您已登錄</h1>
-                <li><a href="Homepagina.php">Home</a></li>
-                <li><a href="account.php">account</a></li>
-                <li><form action="Inlogpagina.php" method="post">
+        <header>
+            <nav>
+                <ul>
+                <h1>您好，您已登錄</h1>
+                    <li><a href="Homepagina.php">Home</a></li>
+                    <li><a href="account.php">account</a></li>
+                    <li><form action="Inlogpagina.php" method="post">
                     <button type="submit" name="logout-submit">Logout</button>
-            </ul>
-            <h1>Home</h1>
-        </nav>
-    </header>
+                </ul>
+                <h1>Home</h1>
+            </nav>
+        </header>
     <div class="gegevens">
         <p>Welkom op de homepagina, wat wilt u doen?</p>
-        <button onclick="location.href='produchten.php'" name="producten">Producten</button>
+        <button type="button" onclick="window.location.href='prodechten.php'">Prodechten</button>
 </body>
 </html>
