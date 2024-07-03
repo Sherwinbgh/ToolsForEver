@@ -1,4 +1,5 @@
 <?php
+// hier zegt hij dat als de sessie ingelogd is dat hij dan de pagina laat zien en
     session_start();
     require("Connection.php");
     if (isset($_POST['logout-submit'])) {
@@ -7,10 +8,11 @@
         header("Location: Inlogpagina.php");
         exit();
     }
+// hier zegt hij dat als de sessie niet ingelogd is dat hij dan naar de inlogpagina gaat
     if (isset($_POST['login-submit'])){
         $email      = $_POST['email'];
         $password   = $_POST['password'];
-
+// hier pak ik mijn sql statement en zeg ik dat hij de email en wachtwoord moet pakken van de gebruiker
         $sql = "SELECT * FROM Gebruiker WHERE Email = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $email);
@@ -24,11 +26,13 @@
                 header("Location: Homepagina.php");
                 exit();
             }
+// als het niet klopt dat geeft het een foutmelding
         }else{
             echo "Inloggen mislukt";
         }
         $stmt-> close();
     }
+// hier zegt hij dat als de sessie ingelogd is dat hij dan de pagina laat zien en
     if (isset($_SESSION["ingelogd"]) && $_SESSION["ingelogd"]) {
         header("Location: Homepagina.php");
         exit();

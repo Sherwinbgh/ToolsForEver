@@ -1,4 +1,6 @@
 <?php
+// hier zegt hij dat als de sessie ingelogd is dat hij dan de pagina laat zien en
+// als de sessie niet ingelogd is dat hij dan naar de inlogpagina gaat
 session_start();
     if (isset($_SESSION["ingelogd"])){
         if ($_SESSION["ingelogd"] == true){
@@ -32,5 +34,6 @@ session_start();
     <div class="gegevens">
         <p>Welkom op de homepagina, wat wilt u doen?</p>
         <button type="button" onclick="window.location.href='prodechten.php'">Prodechten</button>
+        <button type="button" onclick="window.location.href='toe-del.php'">Toevoegen en deleten</button>
 </body>
 </html>

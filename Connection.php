@@ -1,4 +1,5 @@
 <?php
+// hier zie je de connectie van my sql
 $servername = "mysql";
 $username = "root";
 $password = "password";
