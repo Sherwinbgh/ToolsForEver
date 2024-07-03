@@ -11,6 +11,7 @@ if($result->num_rows > 0) {
 } else {
     $data = [];
 }
+
 if(isset($_POST["Update-submit"])){
     $voornaam = $_POST["Voornaam"];
     $email = $_POST["Email"];
@@ -22,6 +23,7 @@ if(isset($_POST["Update-submit"])){
         $_SESSION["Email"] = $email;
     }
 }
+
 if(isset($_POST["Verwijder-submit"])){
     $stmt = $conn->prepare("DELETE FROM Gebruiker WHERE Email = ?");
     $stmt->bind_param("s", $_SESSION["Email"]);
@@ -29,6 +31,7 @@ if(isset($_POST["Verwijder-submit"])){
     session_destroy();
     header("Location: Inlogpagina.php");
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
