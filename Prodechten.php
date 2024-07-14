@@ -1,6 +1,11 @@
 <?php
 session_start();
 require("Connection.php");
+
+$sql = "select * from Artikel";
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$result = $stmt->get_result();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,5 +32,12 @@ require("Connection.php");
     <input type="text" name="search" placeholder="Search...">
     <button type="submit">Search</button>
 </form>
+<?php
+foreach ($result as $row) {
+    ?>
+        <p><?php echo $row['Product']; ?></p>
+    <?php
+}
+?>
 </body>
 </html>
