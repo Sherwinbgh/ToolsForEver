@@ -36,6 +36,10 @@ $result = $stmt->get_result();
 foreach ($result as $row) {
     ?>
         <p><?php echo $row['Product']; ?></p>
+        <p><?php echo $row['Type']; ?></p>
+        <p><?php echo $row['Fabrieken']; ?></p>
+        <p><?php echo $row['Inkoop']; ?></p>
+        <p><?php echo $row['Verkoop']; ?></p>
     <?php
 }
 ?>
