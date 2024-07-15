@@ -11,3 +11,8 @@ header{
     background-color: #3e3737;
     padding: 10px 20px;
 }
+.grid{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}

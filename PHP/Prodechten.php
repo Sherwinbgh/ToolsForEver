@@ -12,7 +12,7 @@ $result = $stmt->get_result();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="prodechten.css">
+    <link rel="stylesheet" href="../Style/prodechten.css">
     <title>Produchten</title>
 </head>
 <body>
@@ -32,14 +32,17 @@ $result = $stmt->get_result();
     <input type="text" name="search" placeholder="Search...">
     <button type="submit">Search</button>
 </form>
+
 <?php
 foreach ($result as $row) {
     ?>
+    <div class="grid">
         <p><?php echo $row['Product']; ?></p>
         <p><?php echo $row['Type']; ?></p>
         <p><?php echo $row['Fabrieken']; ?></p>
         <p><?php echo $row['Inkoop']; ?></p>
         <p><?php echo $row['Verkoop']; ?></p>
+</div>
     <?php
 }
 ?>
