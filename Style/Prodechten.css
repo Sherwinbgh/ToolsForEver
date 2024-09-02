@@ -16,3 +16,8 @@ header{
     flex-direction: row;
     gap: 10px;
 }
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;	
+}

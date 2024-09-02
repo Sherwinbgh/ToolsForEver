@@ -2,10 +2,12 @@
 session_start();
 require("Connection.php");
 
+
 $sql = "select * from Artikel";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 $result = $stmt->get_result();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,24 +29,24 @@ $result = $stmt->get_result();
             </ul>
             <h1>Prodechten</h1>
         </nav>
-    </header>
-<form action="search.php" method="GET">
-    <input type="text" name="search" placeholder="Search...">
-    <button type="submit">Search</button>
-</form>
-
+</header>
+    <input type="text" name="search" placeholder="Search..." id="searchbar">
+<table>
+    <tr>
+        <th>Product</th>
+        <th>Type</th>
+        <th>Fabrieken</th>
+        <th>Inkoop</th>
+        <th>Verkoop</th>
+    </tr>
+</table>
+<div id="prodechtContineer">
 <?php
 foreach ($result as $row) {
-    ?>
-    <div class="grid">
-        <p><?php echo $row['Product']; ?></p>
-        <p><?php echo $row['Type']; ?></p>
-        <p><?php echo $row['Fabrieken']; ?></p>
-        <p><?php echo $row['Inkoop']; ?></p>
-        <p><?php echo $row['Verkoop']; ?></p>
-</div>
-    <?php
+    include("Prodecht.php");
 }
 ?>
+</div>
+<script src="../Javascript/searchbar.js"></script>
 </body>
 </html>
