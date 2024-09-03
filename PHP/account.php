@@ -42,15 +42,26 @@ if(isset($_POST["Verwijder-submit"])){
     <title>Account</title>
 </head>
 <body>
-<header>
-        <nav>
-            <ul>
-            <h1>Account</h1>
-                <li><a href="Homepagina.php">Home</a></li>
-                <li><a href="account.php">account</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header>
+            <nav class="navbar"> 
+                <ul>
+                <div class="china">
+                <h1>您好，您已登錄</h1>
+                </div>
+                <div class="Account">
+                <h1>Accout</h1>
+                </div>
+                    <li><a href="Homepagina.php">Home</a></li>
+                    <li><a href="account.php">account</a></li>
+                    <li><form action="Inlogpagina.php" method="post">
+                    <button type="submit" name="logout-submit">Logout</button></form></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="grid">
+        <div class="sonic">
+        <img src="../Fotos/sonic rush pose.png" alt="sonic rush pose" width="200px">
+        </div>
     <div class="gegevens">
         <form action="account.php" method="post">
             <h1>U gegevens</h1>
@@ -70,6 +81,7 @@ if(isset($_POST["Verwijder-submit"])){
             }
             ?>
         </form>
+        </div>
         </div>
 </body>
 </html>

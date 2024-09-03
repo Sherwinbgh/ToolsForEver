@@ -19,16 +19,22 @@ $result = $stmt->get_result();
 </head>
 <body>
 <header>
-        <nav>
-            <ul>
+<header>
+    <nav class="navbar"> 
+        <ul>
+        <div class="china">
             <h1>您好，您已登錄</h1>
+            </div>
+            <div class="Home">
+            <h1>Produchten</h1>
+            </div>
                 <li><a href="Homepagina.php">Home</a></li>
                 <li><a href="account.php">account</a></li>
                 <li><form action="Inlogpagina.php" method="post">
-                <button type="submit" name="logout-submit">Logout</button>
-            </ul>
-            <h1>Prodechten</h1>
-        </nav>
+                <button type="submit" name="logout-submit">Logout</button></form></li>
+        </ul>
+    </nav>
+</header>
 </header>
     <input type="text" name="search" placeholder="Search..." id="searchbar">
 <table>

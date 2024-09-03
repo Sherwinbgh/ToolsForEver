@@ -1,18 +1,18 @@
 body{
-    background-color: #f4f4f4;
+    background-color: rgb(63, 63, 102);
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
 }
 header{
-    background-color: yellowgreen;
     color: white;
     padding: 10px 0;
     text-align: left;
     justify-content: space-between;
     align-items: center;
 }
-h1{
+.china{
+    text-align: right;
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
     padding: 0;
@@ -20,4 +20,40 @@ h1{
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+.Home{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.navbar ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(52, 52, 52);
+}
+.navbar a{
+    text-decoration: none;
+    color: white;
+}
+.navbar ul li{
+    display: inline;
+    padding: 10px;
+}
+.navbar ul :hover{
+    background-color: rgb(38, 39, 38);
+}
+button{
+    background-color: rgb(52, 52, 52);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
 }

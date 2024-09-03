@@ -1,9 +1,10 @@
 body{
     background-color: #678a87;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 header{
-    background-color: yellowgreen;
-    color: black;
     padding: 10px 0;
     text-align: left;
     justify-content: space-between;
@@ -14,7 +15,70 @@ header{
     border: 1px solid black;
     width: 500px;
     height: 500px;
+    justify-content: center;
+    margin: auto;
 }
-h1{
+.item1 { grid-area: sonic; }
+.item2 { grid-area: gegevens;}
+.grid{
+    display: grid;
+    grid-template-columns: auto auto ;
+    grid-template-areas:
+    'sonic' 'gegevens'
+    'sonic' 'gegevens'
+    'sonic' 'gegevens';
+    gap: 10px; 
+}
+.sonic{
+    justify-content: left;
+    height: auto;
+    width: 100%;
+    display: grid;
+    margin: auto;
+}
+.china{
+    text-align: right;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.Account{
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.navbar ul{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(52, 52, 52);
+}
+.navbar a{
+    text-decoration: none;
+    color: white;
+}
+.navbar ul li{
+    display: inline;
+    padding: 10px;
+}
+.navbar ul :hover{
+    background-color: rgb(38, 39, 38);
+}
+button{
+    background-color: rgb(52, 52, 52);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
 }

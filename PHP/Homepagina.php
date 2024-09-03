@@ -20,15 +20,19 @@ session_start();
 </head>
 <body>
         <header>
-            <nav>
+            <nav class="navbar"> 
                 <ul>
+                <div class="china">
                 <h1>您好，您已登錄</h1>
+                </div>
+                <div class="Home">
+                <h1>Home</h1>
+                </div>
                     <li><a href="Homepagina.php">Home</a></li>
                     <li><a href="account.php">account</a></li>
                     <li><form action="Inlogpagina.php" method="post">
-                    <button type="submit" name="logout-submit">Logout</button>
+                    <button type="submit" name="logout-submit">Logout</button></form></li>
                 </ul>
-                <h1>Home</h1>
             </nav>
         </header>
     <div class="gegevens">
