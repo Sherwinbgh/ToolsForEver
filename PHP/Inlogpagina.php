@@ -47,6 +47,7 @@
     <title>Inloggen</title>
 </head>
 <body>
+    <div class="gegevens">
     <form action="inlogpagina.php" method="post">
             <h1>Inloggen</h1>
             <h2>Email</h2>
@@ -58,5 +59,6 @@
             <br>
         </form>
         <button type="submit" name="signup-submit" onclick="location.href='Signup.php'">Registreren</button>
+        </div>
 </body>
 </html>
