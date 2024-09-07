@@ -11,6 +11,9 @@ header{
     justify-content: space-between;
     align-items: center;
 }
+h1{
+    margin: 0;
+}
 .china{
     text-align: right;
     font-family: 'Courier New', Courier, monospace;

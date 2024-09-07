@@ -58,7 +58,9 @@
             <button type="submit" name="login-submit">Inloggen</button>
             <br>
         </form>
+        <div class="php-button">
         <button type="submit" name="signup-submit" onclick="location.href='Signup.php'">Registreren</button>
+        </div>
         </div>
 </body>
 </html>
