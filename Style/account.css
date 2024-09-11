@@ -10,6 +10,9 @@ header{
     justify-content: space-between;
     align-items: center;
 }
+h1{
+    margin: 0;
+}
 .gegevens{
     display: grid;
     border: 1px solid black;

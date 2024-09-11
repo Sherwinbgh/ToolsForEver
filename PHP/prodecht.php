@@ -9,7 +9,8 @@ if ($input) {
         'Type' => $row['Type'],
         'Fabrieken' => $row['Fabrieken'],
         'Inkoop' => $row['Inkoop'],
-        'Verkoop' => $row['Verkoop']
+        'Verkoop' => $row['Verkoop'],
+        'Locatie' => $row['LocatieNaam']
     ];
 }
 ?>
@@ -19,4 +20,5 @@ if ($input) {
         <p><?php echo $row['Fabrieken']; ?></p>
         <p><?php echo $row['Inkoop']; ?></p>
         <p><?php echo $row['Verkoop']; ?></p>
+        <p><?php echo $row['LocatieNaam']; ?></p>
 </div>

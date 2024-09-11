@@ -3,7 +3,10 @@ session_start();
 require("Connection.php");
 
 
-$sql = "select * from Artikel";
+$sql = "SELECT Artikel.*, voorraad.*, Locatie.Locatie AS LocatieNaam 
+        FROM Artikel 
+        INNER JOIN voorraad ON Artikel.idArtikel = voorraad.Artikel_idArtikel 
+        INNER JOIN Locatie ON voorraad.Locatie_idLocatie = Locatie.idLocatie";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -15,7 +18,7 @@ $result = $stmt->get_result();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../Style/prodechten.css">
-    <title>Produchten</title>
+    <title>producten</title>
 </head>
 <body>
 <header>
@@ -26,7 +29,7 @@ $result = $stmt->get_result();
             <h1>您好，您已登錄</h1>
             </div>
             <div class="Home">
-            <h1>Produchten</h1>
+            <h1>producten</h1>
             </div>
                 <li><a href="Homepagina.php">Home</a></li>
                 <li><a href="account.php">account</a></li>
@@ -36,7 +39,10 @@ $result = $stmt->get_result();
     </nav>
 </header>
 </header>
+<br>
+<div class="src">
     <input type="text" name="search" placeholder="Search..." id="searchbar">
+</div>
 <table>
     <tr>
         <th>Product</th>
@@ -44,6 +50,7 @@ $result = $stmt->get_result();
         <th>Fabrieken</th>
         <th>Inkoop</th>
         <th>Verkoop</th>
+        <th>Locatie</th>
     </tr>
 </table>
 <div id="prodechtContineer">

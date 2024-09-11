@@ -2,10 +2,19 @@
 session_start();
 require("Connection.php");
 
-$sql = "select * from Artikel";
+$sql = "SELECT Artikel.*, voorraad.*, Locatie.Locatie AS LocatieNaam 
+        FROM Artikel 
+        INNER JOIN voorraad ON Artikel.idArtikel = voorraad.Artikel_idArtikel 
+        INNER JOIN Locatie ON voorraad.Locatie_idLocatie = Locatie.idLocatie";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 $result = $stmt->get_result();
+
+// foreach ($result as $row) {
+//     echo json_encode($row);
+//     echo "<br>";
+// }
+// exit;
 
 if(isset($_POST["update"])){
     $idArtikel = $_POST["idArtikel"];
@@ -15,6 +24,14 @@ if(isset($_POST["update"])){
     $m_aantal = $_POST["M-Aantal"];
     $stmt = $conn->prepare("UPDATE Artikel SET Product = ?, `Type` = ?, Fabrieken = ?, `M-Aantal` = ? WHERE idArtikel = ?");
     $stmt->bind_param("ssssi", $product, $type, $fabrieken, $m_aantal, $idArtikel);
+    $stmt->execute();
+    header("Location: toe-del.php");
+}
+if(isset($_POST["update2"])){
+    $idArtikel = $_POST["idArtikel"];
+    $locatie = $_POST["Locatie"];
+    $stmt = $conn->prepare("UPDATE Locatie SET Locatie = ? WHERE idLocatie = ?");
+    $stmt->bind_param("si", $locatie, $idArtikel);
     $stmt->execute();
     header("Location: toe-del.php");
 }
@@ -61,6 +78,7 @@ if(isset($_POST["create"])){
     <link rel="stylesheet" type="text/css" href="../Style/toe-del.css">
     <link rel="stylesheet" href="../Style/prodechten.css">
     <title>Toevoegen en Verwijderen</title>
+    <link rel="icon" type="image/png" href="Fotos/Logo.png">
 </head>
 <body>
 <header>
@@ -88,6 +106,7 @@ if(isset($_POST["create"])){
         <th>Inkoop</th>
         <th>Verkoop</th>
         <th>Aantal</th>
+        <th>Locatie</th>
         <th>Verwijderen</th>
         <th>Akkoord</th>
         </tr>
@@ -119,6 +138,7 @@ if(isset($_POST["create"])){
                 <td><input type="text" name="Inkoop" value="<?php echo $row['Inkoop']; ?>" disabled></td>
                 <td><input type="text" name="Verkoop" value="<?php echo $row['Verkoop']; ?>" disabled></td>
                 <td><input type="text" name="M-Aantal" value="<?php echo $row['M-Aantal']; ?>"></td>
+                <td><input type="text" name="Locatie" value="<?php echo $row['LocatieNaam']; ?>"></td>
                 <td><button name="delete">Verwijderen</button></td>
                 <td><button name="update">Akkoord</button></td>
                 </tr>
@@ -134,6 +154,7 @@ if(isset($_POST["create"])){
                 <td><input type="text" name="Inkoop"></td>
                 <td><input type="text" name="Verkoop"></td>
                 <td><input type="text" name="M-Aantal"></td>
+                <td><input type="text" name="Locatie"></td>
                 <td><button name="create">Maken</button></td>
                 </tr>
         </form>
