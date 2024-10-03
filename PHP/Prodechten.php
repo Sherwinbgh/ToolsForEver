@@ -44,6 +44,7 @@ $result = $stmt->get_result();
     <input type="text" name="search" placeholder="Search..." id="searchbar">
 </div>
 <table>
+    <div class="icons">
     <tr>
         <th>Product</th>
         <th>Type</th>
@@ -61,5 +62,6 @@ foreach ($result as $row) {
 ?>
 </div>
 <script src="../Javascript/searchbar.js"></script>
+</div>
 </body>
 </html>

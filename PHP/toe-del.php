@@ -10,12 +10,6 @@ $stmt = $conn->prepare($sql);
 $stmt->execute();
 $result = $stmt->get_result();
 
-// foreach ($result as $row) {
-//     echo json_encode($row);
-//     echo "<br>";
-// }
-// exit;
-
 if(isset($_POST["update"])){
     $idArtikel = $_POST["idArtikel"];
     $product = $_POST["Product"];
@@ -125,7 +119,8 @@ if(isset($_POST["create"])){
                 'Type' => $row['Type'],
                 'Fabrieken' => $row['Fabrieken'],
                 'Inkoop' => $row['Inkoop'],
-                'Verkoop' => $row['Verkoop']
+                'Verkoop' => $row['Verkoop'],
+                'Locatie' => $row['LocatieNaam']
             ];
         }
         ?>
@@ -160,5 +155,6 @@ if(isset($_POST["create"])){
         </form>
     </div>
     </div>
+    <script src="../Javascript/alert.js"></script>
 </body>
 </html>
